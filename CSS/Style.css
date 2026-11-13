@@ -665,22 +665,42 @@ legend {
     line-height: 1.5;
 }
 
-.submit-button {
-    width: 100%;
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.submit-button,
+.reset-button {
+    flex: 1;
     min-height: 48px;
     border: 0;
     border-radius: 8px;
-    background: var(--orange);
-    color: #fff;
     cursor: pointer;
     font: inherit;
     font-weight: 700;
     transition: background-color 150ms ease, transform 150ms ease;
 }
 
+.submit-button {
+    background: var(--orange);
+    color: #fff;
+}
+
 .submit-button:hover {
     transform: translateY(-1px);
     background: #d95613;
+}
+
+.reset-button {
+    background: #ecf0f7;
+    color: var(--navy);
+}
+
+.reset-button:hover {
+    transform: translateY(-1px);
+    background: #dde5f2;
 }
 
 .form-message {
