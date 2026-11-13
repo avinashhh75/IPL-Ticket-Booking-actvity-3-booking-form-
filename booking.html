@@ -67,7 +67,10 @@
                     </div>
                 </fieldset>
 
-                <button class="submit-button" type="submit">Confirm booking</button>
+                <div class="form-actions">
+                    <button class="reset-button" type="reset">Reset</button>
+                    <button class="submit-button" type="submit">Confirm booking</button>
+                </div>
                 <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
             </form>
 
@@ -129,6 +132,11 @@
             const name = document.getElementById("name").value.trim();
             document.getElementById("form-message").textContent =
                 `Thanks, ${name}! Your sample booking details are ready. No payment or real ticket reservation was made.`;
+        });
+
+        form.addEventListener("reset", () => {
+            document.getElementById("form-message").textContent = "";
+            updateSummary();
         });
 
         updateSummary();
