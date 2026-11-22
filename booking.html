@@ -1,145 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#101b3f">
-    <meta name="description" content="Choose your IPL 2026 match tickets and review your sample booking.">
-    <title>Book Tickets | IPL 2026</title>
-    <link rel="stylesheet" href="CSS/Style.css">
+
+    <title>IPL Ticket Booking Form</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-    <header class="site-header">
-        <a class="brand" href="index.html">IPL <span>2026</span></a>
-        <a class="back-link" href="index.html#matches">← Match schedule</a>
+
+    <!-- Header -->
+    <header>
+        <h2>IPL 2026 Ticket Booking</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#booking">Book Tickets</a>
+        </nav>
     </header>
 
-    <main class="content-section">
-        <section class="intro" aria-labelledby="page-title">
-            <p class="eyebrow">The season is calling</p>
-            <h1 class="intro-title" id="page-title">Book your match tickets</h1>
-            <p>Choose your match and seats, then enter your contact details.</p>
-        </section>
 
-        <div class="booking-card">
-            <form id="booking-form">
-                <fieldset>
-                    <legend>Match and tickets</legend>
-                    <div class="fields">
-                        <div class="field field-full">
-                            <label for="match">Select match</label>
-                            <select id="match" name="match" required>
-                                <option value="rcb-csk" data-teams="RCB vs CSK" data-venue="Bengaluru">RCB vs CSK — Bengaluru</option>
-                                <option value="mi-kkr" data-teams="MI vs KKR" data-venue="Mumbai">MI vs KKR — Mumbai</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="stand">Ticket category</label>
-                            <select id="stand" name="stand" required>
-                                <option value="general" data-price="1000">General — ₹1,000</option>
-                                <option value="premium" data-price="2500">Premium — ₹2,500</option>
-                                <option value="vip" data-price="5000">VIP — ₹5,000</option>
-                            </select>
-                        </div>
-                        <div class="field">
-                            <label for="quantity">Number of tickets</label>
-                            <input id="quantity" name="quantity" type="number" min="1" max="10" value="1" required>
-                            <p class="hint">You can book 1–10 tickets.</p>
-                        </div>
-                    </div>
-                </fieldset>
+    <!-- Booking Form -->
+    <section class="booking" id="booking">
 
-                <fieldset>
-                    <legend>Your details</legend>
-                    <div class="fields">
-                        <div class="field field-full">
-                            <label for="name">Full name</label>
-                            <input id="name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required>
-                        </div>
-                        <div class="field">
-                            <label for="email">Email address</label>
-                            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-                        </div>
-                        <div class="field">
-                            <label for="phone">Phone number</label>
-                            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="10-digit phone number" pattern="[0-9+\-\s()]{8,15}" required>
-                        </div>
-                    </div>
-                </fieldset>
+        <h2>Ticket Booking Form</h2>
 
-                <div class="form-actions">
-                    <button class="reset-button" type="reset">Reset</button>
-                    <button class="submit-button" type="submit">Confirm booking</button>
-                </div>
-                <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
-            </form>
+        <form action="#" method="get">
 
-            <aside class="summary" aria-labelledby="summary-title">
-                <h2 id="summary-title">Booking summary</h2>
-                <p class="summary-row"><span>Match</span><strong id="summary-match">RCB vs CSK</strong></p>
-                <p class="summary-row"><span>Venue</span><strong id="summary-venue">Bengaluru</strong></p>
-                <p class="summary-row"><span>Category</span><strong id="summary-stand">General</strong></p>
-                <p class="summary-row"><span>Price per ticket</span><strong id="summary-price">₹1,000</strong></p>
-                <p class="summary-row"><span>Tickets</span><strong id="summary-quantity">1</strong></p>
-                <p class="summary-row summary-total"><span>Total</span><strong id="summary-total">₹1,000</strong></p>
-                <p class="notice">Match details and prices shown here are sample data. This demo form does not process payments or reserve real tickets.</p>
-            </aside>
-        </div>
-    </main>
+            <!-- Name -->
+            <label for="name">Full Name:</label>
 
-    <footer class="site-footer">
-        <a class="brand" href="index.html">IPL <span>2026</span></a>
-        <p>&copy; 2026 IPL Ticket Booking Website. Sample schedule and prices only.</p>
-        <a href="index.html#home">Back to home ↑</a>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                minlength="3"
+                maxlength="30"
+                required
+            >
+
+
+            <!-- Email -->
+            <label for="email">Email Address:</label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@gmail.com"
+                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}"
+                title="Enter a valid email address, example@gmail.com"
+                required
+            >
+
+
+            <!-- Phone -->
+            <label for="phone">Phone Number:</label>
+
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter 10 digit mobile number"
+                pattern="[0-9]{10}"
+                minlength="10"
+                maxlength="10"
+                required
+            >
+
+
+            <!-- Match Selection -->
+            <label for="match">Select Match:</label>
+
+            <select id="match" name="match" required>
+
+                <option value="">-- Select Match --</option>
+
+                <option value="RCB vs CSK">RCB vs CSK</option>
+
+                <option value="MI vs KKR">MI vs KKR</option>
+
+                <option value="SRH vs DC">SRH vs DC</option>
+
+                <option value="GT vs PBKS">GT vs PBKS</option>
+
+            </select>
+
+
+            <!-- Stand Category -->
+            <label for="stand">Stand Category:</label>
+
+            <select id="stand" name="stand" required>
+
+                <option value="">-- Select Stand --</option>
+
+                <option value="General">General</option>
+
+                <option value="Premium">Premium</option>
+
+                <option value="VIP">VIP</option>
+
+            </select>
+
+
+            <!-- Number of Tickets -->
+            <label for="tickets">Number of Tickets:</label>
+
+            <input
+                type="number"
+                id="tickets"
+                name="tickets"
+                min="1"
+                max="10"
+                placeholder="Enter tickets (1-10)"
+                required
+            >
+
+
+            <!-- Booking Preference -->
+            <label>Booking Preference:</label>
+
+            <div class="radio-group">
+
+                <input
+                    type="radio"
+                    id="online"
+                    name="preference"
+                    value="Online"
+                    required
+                >
+
+                <label for="online">Online</label>
+
+                <input
+                    type="radio"
+                    id="counter"
+                    name="preference"
+                    value="Counter"
+                >
+
+                <label for="counter">Counter</label>
+
+            </div>
+
+
+            <!-- Submit and Reset -->
+            <button type="submit">
+                Submit Booking
+            </button>
+
+            <button type="reset" class="reset-btn">
+                Reset
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>IPL 2026 Ticket Booking</p>
+
+        <p>Thank you for choosing us!</p>
+
+        <p>© 2026 All Rights Reserved</p>
+
     </footer>
 
-    <script>
-        const form = document.getElementById("booking-form");
-        const matchSelect = document.getElementById("match");
-        const standSelect = document.getElementById("stand");
-        const quantityInput = document.getElementById("quantity");
-        const currency = new Intl.NumberFormat("en-IN", {
-            style: "currency",
-            currency: "INR",
-            maximumFractionDigits: 0
-        });
 
-        function updateSummary() {
-            const matchOption = matchSelect.selectedOptions[0];
-            const standOption = standSelect.selectedOptions[0];
-            const quantity = Number(quantityInput.value) || 0;
-            const price = Number(standOption.dataset.price);
-
-            document.getElementById("summary-match").textContent = matchOption.dataset.teams;
-            document.getElementById("summary-venue").textContent = matchOption.dataset.venue;
-            document.getElementById("summary-stand").textContent = standOption.textContent.split(" — ")[0];
-            document.getElementById("summary-price").textContent = currency.format(price);
-            document.getElementById("summary-quantity").textContent = String(quantity);
-            document.getElementById("summary-total").textContent = currency.format(price * quantity);
-        }
-
-        matchSelect.addEventListener("change", updateSummary);
-        standSelect.addEventListener("change", updateSummary);
-        quantityInput.addEventListener("input", updateSummary);
-
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            if (!form.reportValidity()) {
-                return;
-            }
-
-            const name = document.getElementById("name").value.trim();
-            document.getElementById("form-message").textContent =
-                `Thanks, ${name}! Your sample booking details are ready. No payment or real ticket reservation was made.`;
-        });
-
-        form.addEventListener("reset", () => {
-            document.getElementById("form-message").textContent = "";
-            updateSummary();
-        });
-
-        updateSummary();
-    </script>
 </body>
 </html>
